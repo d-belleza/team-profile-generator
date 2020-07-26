@@ -15,6 +15,7 @@ const numRegEx = /^[1-9]*\d$/
 
 
 const addManager = () => {
+    console.log("---------------");
     inquirer
         .prompt([
             {
@@ -68,6 +69,7 @@ const addManager = () => {
 }
 
 const addTeam = () => {
+    console.log("---------------");
     inquirer
         .prompt([
             {
@@ -89,13 +91,111 @@ const addTeam = () => {
 }
 
 const addEngineer = () => {
-    console.log("adding engineer");
-    addTeam();
+    console.log("---------------");
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "Please enter the engineer's name",
+                validate: nameInput => {
+                    if (nameInput) {
+                      return true;
+                    }
+                    return "Please enter a name";
+                }
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'Please enter the engineer ID number',
+                validate: idInput => {
+                    if(idInput.match(numRegEx)) {
+                        return true;
+                    }
+                    return "Please enter the ID number"
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Please enter the engineer email',
+                validate: emailInput => {
+                    if(emailInput.match(emailRegEx)) {
+                        return true;
+                    }
+                    return "Please enter a valid email"
+                }
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: 'Please enter the engineer GitHub username',
+                validate: githubInput => {
+                    if(githubInput) {
+                        return true;
+                    }
+                    return "Please enter the GitHub username"
+                }
+            }
+        ])
+        .then(() => {
+            addTeam();
+        })
 }
 
 const addIntern = () => {
-    console.log("adding intern");
-    addTeam();
+    console.log("---------------");
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "Please enter the intern's name",
+                validate: nameInput => {
+                    if (nameInput) {
+                      return true;
+                    }
+                    return "Please enter a name";
+                }
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'Please enter the intern ID number',
+                validate: idInput => {
+                    if(idInput.match(numRegEx)) {
+                        return true;
+                    }
+                    return "Please enter the ID number"
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Please enter the intern email',
+                validate: emailInput => {
+                    if(emailInput.match(emailRegEx)) {
+                        return true;
+                    }
+                    return "Please enter a valid email"
+                }
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'Please enter the intern school name',
+                validate: schoolInput => {
+                    if(schoolInput) {
+                        return true;
+                    }
+                    return "Please enter the school name"
+                }
+            }
+        ])
+        .then(() => {
+            addTeam();
+        })
 }
 
 addManager();
