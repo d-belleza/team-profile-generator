@@ -2,7 +2,7 @@ const createCard = data => {
     const outputArray = data.map(property => {
         const {role, name, id, email, info} = property;
         return `
-        <div class="card mx-3">
+        <div class="card m-2">
             <div class="card-header bg-info text-white p-3">
                 <h5 class="card-title">${name}</h5>
                 <h6 class="card-title">${role}</h6>
@@ -48,6 +48,8 @@ module.exports = data => {
                 </div>
             </div>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </body>
     </html>
