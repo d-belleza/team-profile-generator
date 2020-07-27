@@ -16,7 +16,9 @@ Run npm install to install the required packages
 ## Usage
 In the command line, run node index and answer all of the prompts given in the terminal. An index.html and style.css file will then be created in the dist directory that the user can use.
 
-![Application video](./assets/walkthrough.gif)
+Video walkthrough, click to open full video:
+
+[![Application video](./assets/walkthrough.gif)](https://drive.google.com/file/d/1QStn8JI86Hic0HHvWmh8PcRXf2H5HIFY/view)
 
 Example of generated page:
 
